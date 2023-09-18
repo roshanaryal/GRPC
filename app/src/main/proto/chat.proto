@@ -1,0 +1,19 @@
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "ChatProto";
+option objc_class_prefix = "CPT";
+
+service Chat{
+  rpc joinChat(stream ChatRequest) returns (stream ChatResponse);
+}
+
+message ChatRequest{
+  required string id=1;
+  required string message=2;
+
+}
+
+message ChatResponse{
+  required string id=1;
+  required string message=2;
+}
